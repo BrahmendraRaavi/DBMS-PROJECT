@@ -1,0 +1,61 @@
+9.1 creation of tables in mysql: 
+SQL Query for owner1 table creation 
+ 
+create table owner1(O_id varchar(100),O_name varchar(100),O_phone numeric(20,2),primary key(O_id)); 
+SQL Query for owner2 table creation 
+create table owner2(O_name varchar(100),TC_id varchar(102), foreign key (TC_id )REFERENCES time_card (TC_id)); 
+SQL Query for boat table creation 
+create table boat(H_id varchar(70),O_id varchar(70),Capacity numeric(30),Type varchar(100),Noofbed numeric(30), primary key(H_id),foreign key(O_id) references owner1 (O_id)); 
+SQL Query for boat1 table creation 
+create table boat1(Type varchar(100),price numeric(30,5)); 
+SQL Query for boat2 table creation 
+create table boat2(H_id varchar(70),H_name varchar(100) ,foreign key (H_id) REFERENCES boat(H_id)); 
+SQL Query for driver1 table creation 
+create table driver1(D_id varchar(100),D_ssn numeric(20,2),D_age 
+numeric(20,2),D_phone varchar(100),primary key(D_id,D_ssn)); 
+SQL Query for driver2 table creation 
+create table driver2(D_phone varchar(100),D_location varchar(100));
+SQL Query for driver3 table creation 
+create table driver3(D_id varchar(100),D_name varchar(100),foreign key(D_id) references driver1(D_id)); 
+SQL Query for driver4 table creation 
+ 
+create table driver4(D_salary numeric(20,2),D_ssn numeric(20,2)); 
+SQL Query for tourist1 table creation 
+create table tourist1(T_id varchar(100),T_name varchar(100),T_age 
+numeric(20,2),T_phone varchar(100),primary key(T_id)); 
+SQL Query for tourist2 table creation 
+create table tourist2(T_phone varchar(100),T_location varchar(100) ); 
+9.2 insertion of data into tables: 
+SQL Query for owner1 table insertion 
+insert into owner1 values('o1','pullaya',789456123), ('o2','rangaya',123456789), ('o3','brahmendra',456123789), ('o4','yellaya',741852963), ('o5','sahayam',147852963); 
+SQL Query for owner2 table insertion 
+insert into owner2 values('pullaya','TC-101'),('rangaya','TC-101'),('mamatha','TC-103'), ('nehal','TC-104'), ('brahmi','TC-105');
+SQL Query for boat table insertion 
+insert into boat values('H-201','o1',120,'non/ac',40), ('H-206','o1',60,'ac',5), ('H-203','o2',80,'non/ac',10), ('H-205','o3',10,'non/ac',3), ('H-204','o4',12,'ac',4), ('H-202','o1',120,'ac',70); 
+SQL Query for boat1 table insertion 
+ 
+insert into boat1 values('AC',1500),('nonac',650),('AC',6050),('nonac',1250),('AC',1650); 
+SQL Query for boat2 table insertion 
+insert into boat2 values('H-201','jatayu'), ('H-202','varaha'), ('H-203','garuda'), ('H-201','vennela'), ('H-204','radham'); 
+SQL Query for driver1 table insertion 
+insert into driver1 
+values('d1',782,23,'+91293382631'),('d2',712,33,'+91293382632'),('d3',7122,24,'+91293 382231'),('d4',982,28,'+913232382631'),('d5',7123,23,'+9129335182631'); 
+SQL Query for driver2 table insertion 
+insert into driver2 values('+91293382631','amalapuram'), 
+('+91293382632','athreypuram'), ('+91293382231','nouru'),('+913232382631','karachi'), ('+9129335182631','california'); 
+SQL Query for driver3 table insertion 
+insert into driver3 values('d5','raju'),('d3','rani'),('d1','king'),('d2','queen'),('d5','raja'); SQL Query for driver4 table insertion 
+insert into driver4 values(787,1250.5),(7855,12710.5),(7817,12050.5), (7287,12250.5),(1787,19250.5),(782,78952); 
+SQL Query for tourist1 table insertion 
+insert into tourist1 values('T1','mammu',50,'+9182134631'), 
+('T2','mamu',30,'+9182134633'), 
+('T3','qwerty',10,'+91822134631'),
+('T4','masd',12,'+9183214631'), 
+('T5','mqammu',21,'+91812214631'); 
+SQL Query for tourist2 table insertion 
+insert into tourist2 values('+9182134631','amaravathi'), 
+('+9182134531','guntur'), 
+ 
+('+9182135631','addanki'), 
+('+9182174631','gudivada'), 
+('+182134631','florida');
