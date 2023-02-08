@@ -1,0 +1,69 @@
+It is used to make the tables into smaller relations by breaking the bad relations. To reduce the redundancy and minimize the insertion,deletion and update anomalies.Normal frame is a framework for analyzing relation schemas based on their keys and the FDs among their Attributes. 
+In the taken houseboating data base in the relational scheme there are violations of normal form.There are violations in the tables Tourist,Driver,Boat,Owner.
+8.2 Normalization for Tourist table: 
+In the Toursit table the FD’s and the violations of the normal forms. 
+TOURIST(T_ID,T_FIRSTNAME,T_LASTNAME,T_AGE,T_PHONE,T_LOCATION) As it violates the 1NF as it has the multivalued attributes for the name section . 
+We change them into the T_name 
+ 
+FD’s are : FD1: {T_ID} → {T_name,T_T_AGE,T_phone,T_location) 
+FD2: {T_phone} → {T_Location} 
+The taken FD’s violates the 3 NF as where it has transitive relation in the FD2 we should remove it After the 3NF: 
+Tourist 1 :(T_ID,T_NAME,T_AGE,T_PHONE) 
+Tourist 2:(T_Phone,T_location) 
+8.3 Normalization for Driver table: 
+in the Driver table the FD’s and the violations of the normal forms 
+Driver(D_ID,D_SSN,D_FIRSTNAME,D_LASTNAME,D_SALARY,D_AGE,D_PHONE,D_LOCAT ON) 
+As it violates the 1NF as it has the multivalued attributes for the name section We change them into the D_name after the first normal form 
+FD’s are : FD1: {D_ID,D_SSN} → {D_name,D_salary,D_age,D_phone,D_location) FD 2: {D_ID} → {D_name} 
+FD 3 :{D_SSN} → {D_salary} 
+FD 4: {D_phone} → {D_Location} 
+The taken Fd’s violates the 2 Nf from FD2 and FD3 as it has the partial dependence After the 2NF 
+(D_ID,D_SSN,D_AGE,D_PHONE,D_LOCATION) 
+(D_ID,D_name) 
+(D_SSN, D_salary)
+The taken FD’s violates the 3 NF as where it has transitive relation in the FD2 we should remove it 
+After the 3NF: 
+Driver 1 :(D_ID,D_SSN,D_AGE,D_PHONE) 
+Driver 2 : (D_ID, D_name) 
+ 
+Driver 3: (D_SSN , D_salary) 
+Driver 4:(D_Phone,D_location) 
+8.4 Normalization for Boat Table: 
+In the Boat table the FD’s and the violations of the normal forms 
+Boat(H_ID,O_id ,H_name,Capacity,Type ,Noofbeds,price ) 
+As it violates the 1NF as it has the multivalued attributes for the ac,non/ac section We change them into the Type after the first normal form 
+FD’s are : FD1: {H_ID, O_id} → {Capacity,Type ,Noofbeds ) 
+FD 2: {H_ID} → {H_name} 
+FD 3 :{TYPE} → {price} 
+The taken Fd’s violates the 2 Nf from FD2 as it has the partial dependence After the 2NF 
+(H_ID,O_id ,Type ,Noofbeds,price,capacity) 
+(H_ID,H_name) 
+The taken FD’s violates the 3 NF as where it has transitive relation in the FD2 we should remove it 
+After the 3NF: 
+Boat :(H_ID,O_id,Capacity,Type,No.of.beds) 
+Boat 1 : (H_ID,H_name) 
+Boat 2: (TYPE ,Price)
+8.5 Normalization for Owner table: 
+In the Owner table the FD’s and the violations of the normal forms 
+Owner(O_ID,O_FIRSTNAME,O_LASTNAME,O_PHONE,TC_id) 
+As it violates the 1NF as it has the multivalued attributes of the first name,lastname section 
+We change them into the O_name after the first normal form 
+ 
+FD’s are : FD1: {O_ID} → {O_name,O_phone,TC_id) 
+FD 2: {O_name} → {TC_id} 
+The taken FD’s violates the 3 NF as where it has transitive relation in the FD2 we should remove it 
+After the 3NF: 
+Owner 1 :(O_ID,O_name,D_PHONE) 
+Owner 2 : (O_name, TC_id) 
+8.6 Final Tables after Normalization are 
+● Owner 1 
+● Owner 2 
+● Boat 
+● Boat 1 
+● Boat 2 
+● Driver 1 
+● Driver 2 
+● Driver 3 
+● Driver 4 
+● Tourist 1 
+● Tourist 2
