@@ -1,0 +1,12 @@
+The table tourist contains the details of the tourist - name, age and phone number. 
+The entities BOAT and tourist form an aggregate which results in the formation of relation rents, which will be having the primary keys of both tourist and Boat entities. If the driver is unavailable, tourists won't be able to rent a houseboat. 
+The driver entity contains details of the driver such as his id and age. It also contains his medical records, which is a separate entity and is treated as a weak entity. 
+● The Boat entity can be differentiated on the basis of type as A/C and non-A/C. ● The time card entity will have details related to the driver, such as his id and the
+number of hours worked by him. Each driver will have his time card which has to be approved by the respective owner. 
+The relation between entities: 
+● One to one relationship: Time card and Driver, Driver and Medical records. ● One to many relationships: Owner and Boat, owner and Time card. 
+● Many to many relationships: Tourist and Boat. 
+ 
+We used aggregation between Boat and Tourist entities. 
+● Total participation is included through the Medical records entity. 
+● Added new entities such as Medical records, Time cards . Medical records are a weak entity. 
