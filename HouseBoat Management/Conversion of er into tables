@@ -1,0 +1,9 @@
+ 
+Tourist(T_id, TFirst_name, TLast_name, Age,phone,T_location) 
+Driver(D_id, DFirst_name, DLast_name, D_salary, D_age,Dlocation,D_phone) Medical_Record(D_id, I_id, I_description) 
+Time Card(TC_id, Hours_worked, D_id) 
+Owner(O_id, OFirst_name, OLast_name, O_phone,O_phone, TC_id) 
+Boat(capacity,H_id ,H_name,O_id,Type,price,noofrooms) 
+where: 
+Primary Keys are represented by : ___ and 
+Foreign Keys are represented by : grey 
